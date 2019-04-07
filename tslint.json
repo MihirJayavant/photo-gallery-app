@@ -5,6 +5,7 @@
   },
   "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
+    "quotemark": [true, "single"],
     "semicolon": false,
     "array-type": [true, "generic"],
     "arrow-return-shorthand": true,

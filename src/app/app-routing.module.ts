@@ -1,37 +1,31 @@
-import { NgModule } from "@angular/core";
-import { Routes } from "@angular/router";
-import { NSEmptyOutletComponent } from "nativescript-angular";
-import { NativeScriptRouterModule } from "nativescript-angular/router";
+import { NgModule } from '@angular/core'
+import { Routes } from '@angular/router'
+import { NSEmptyOutletComponent } from 'nativescript-angular'
+import { NativeScriptRouterModule } from 'nativescript-angular/router'
 
 const routes: Routes = [
-    {
-        path: "",
-        redirectTo: "/(homeTab:home/default//browseTab:browse/default//searchTab:search/default)",
-        pathMatch: "full"
-    },
+  {
+    path: '',
+    redirectTo: '/(favTab:fav/default//albumTab:album/default)',
+    pathMatch: 'full'
+  },
 
-    {
-        path: "home",
-        component: NSEmptyOutletComponent,
-        loadChildren: "~/app/home/home.module#HomeModule",
-        outlet: "homeTab"
-    },
-    {
-        path: "browse",
-        component: NSEmptyOutletComponent,
-        loadChildren: "~/app/browse/browse.module#BrowseModule",
-        outlet: "browseTab"
-    },
-    {
-        path: "search",
-        component: NSEmptyOutletComponent,
-        loadChildren: "~/app/search/search.module#SearchModule",
-        outlet: "searchTab"
-    }
-];
+  {
+    path: 'fav',
+    component: NSEmptyOutletComponent,
+    loadChildren: '~/app/favourite/favourite.module#FavouriteModule',
+    outlet: 'favTab'
+  },
+  {
+    path: 'album',
+    component: NSEmptyOutletComponent,
+    loadChildren: '~/app/album/album.module#AlbumModule',
+    outlet: 'albumTab'
+  }
+]
 
 @NgModule({
-    imports: [NativeScriptRouterModule.forRoot(routes)],
-    exports: [NativeScriptRouterModule]
+  imports: [NativeScriptRouterModule.forRoot(routes)],
+  exports: [NativeScriptRouterModule]
 })
-export class AppRoutingModule { }
+export class AppRoutingModule {}
