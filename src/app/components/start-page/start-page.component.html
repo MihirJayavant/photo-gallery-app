@@ -1,0 +1,15 @@
+<ActionBar class="action-bar no-shadow">
+  <Label class="action-bar-title" text="Photo Album"></Label>
+</ActionBar>
+
+<TabView>
+  <GridLayout *tabItem="{ title: 'Favourites' }">
+    <Favourites> </Favourites>
+  </GridLayout>
+  <GridLayout *tabItem="{ title: 'Albums' }">
+    <Albums> </Albums>
+  </GridLayout>
+</TabView>
+<StackLayout class="floating-btn-wrapper">
+  <FloatingButton></FloatingButton>
+</StackLayout>

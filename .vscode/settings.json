@@ -3,5 +3,6 @@
         "**/*.css": true,
         "**/*.js": true
     },
-    "editor.formatOnSave": true
+    "editor.formatOnSave": true,
+    "material-icon-theme.activeIconPack": "angular_ngrx"
 }

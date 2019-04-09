@@ -1,27 +1,11 @@
 import { NgModule } from '@angular/core'
 import { Routes } from '@angular/router'
-import { NSEmptyOutletComponent } from 'nativescript-angular'
 import { NativeScriptRouterModule } from 'nativescript-angular/router'
+import { StartPageComponent } from './components/start-page/start-page.component'
 
 const routes: Routes = [
-  {
-    path: '',
-    redirectTo: '/(favTab:fav/default//albumTab:album/default)',
-    pathMatch: 'full'
-  },
-
-  {
-    path: 'fav',
-    component: NSEmptyOutletComponent,
-    loadChildren: '~/app/favourite/favourite.module#FavouriteModule',
-    outlet: 'favTab'
-  },
-  {
-    path: 'album',
-    component: NSEmptyOutletComponent,
-    loadChildren: '~/app/album/album.module#AlbumModule',
-    outlet: 'albumTab'
-  }
+  { path: '', redirectTo: '/home', pathMatch: 'full' },
+  { path: 'home', component: StartPageComponent }
 ]
 
 @NgModule({
