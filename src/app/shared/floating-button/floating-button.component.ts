@@ -5,7 +5,7 @@ import { GestureEventData, TouchGestureEventData } from 'tns-core-modules/ui/ges
   selector: 'FloatingButton',
   moduleId: module.id,
   template: `
-    <StackLayout class="float-btn">
+    <StackLayout class="float-btn" (tap)="onTap($event)">
       <Label class="float-btn-text" [text]="text"></Label>
     </StackLayout>
   `,
@@ -25,7 +25,7 @@ export class FloatingButtonComponent {
   @Output()
   tap = new EventEmitter<GestureEventData>()
 
-  onafterprint(event: GestureEventData) {
+  onTap(event: GestureEventData) {
     this.tap.emit(event)
   }
 

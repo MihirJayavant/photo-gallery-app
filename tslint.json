@@ -5,9 +5,9 @@
   },
   "rulesDirectory": ["node_modules/codelyzer"],
   "rules": {
+    "arrow-parens": false,
     "quotemark": [true, "single"],
     "semicolon": false,
-    "array-type": [true, "generic"],
     "arrow-return-shorthand": true,
     "component-class-suffix": true,
     "directive-class-suffix": true,

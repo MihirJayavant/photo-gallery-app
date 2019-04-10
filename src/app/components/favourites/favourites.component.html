@@ -1,4 +1,26 @@
-<GridLayout class="page page-content">
-  <Label class="page-icon fa" text="&#xf1ea;"></Label>
-  <Label class="page-placeholder" text="Fav content goes here"></Label>
+<GridLayout>
+  <RadListView #listview [items]="photos" itemReorder="true">
+    <ListViewGridLayout
+      tkListViewLayout
+      scrollDirection="Vertical"
+      ios:itemHeight="100"
+      spanCount="4"
+    ></ListViewGridLayout>
+    <ng-template tkListItemTemplate let-photo="item">
+      <GridLayout>
+        <FrescoDrawee
+          height="100"
+          width="100"
+          decodeWidth="100"
+          decodeHeight="100"
+          isDownsampleEnabled="true"
+          verticalAlignment="center"
+          placeholderImageUri="res://home"
+          aspectRatio="1"
+          autoPlayAnimations="true"
+          [imageUri]="photo.url"
+        ></FrescoDrawee>
+      </GridLayout>
+    </ng-template>
+  </RadListView>
 </GridLayout>
