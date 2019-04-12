@@ -1,6 +1,6 @@
 import { Component, ChangeDetectionStrategy } from '@angular/core'
 import * as imagepicker from 'nativescript-imagepicker'
-import { FavouritePhotoService } from '~/app/services'
+import { FavouritePhotoService } from '../../services'
 import { IPhoto } from '~/core/models'
 
 @Component({

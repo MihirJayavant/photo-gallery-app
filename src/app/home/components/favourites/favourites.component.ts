@@ -1,5 +1,5 @@
 import { Component, ChangeDetectionStrategy, OnInit, OnDestroy, ViewChild } from '@angular/core'
-import { FavouritePhotoService } from '~/app/services'
+import { FavouritePhotoService } from '../../services'
 import { RadListViewComponent } from 'nativescript-ui-listview/angular/listview-directives'
 import { ObservableArray } from 'tns-core-modules/data/observable-array/observable-array'
 import { screen } from 'tns-core-modules/platform'
