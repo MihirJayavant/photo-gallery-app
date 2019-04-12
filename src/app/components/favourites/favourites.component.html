@@ -4,20 +4,19 @@
       tkListViewLayout
       scrollDirection="Vertical"
       ios:itemHeight="100"
-      spanCount="4"
+      [spanCount]="columns"
     ></ListViewGridLayout>
     <ng-template tkListItemTemplate let-photo="item">
-      <GridLayout>
+      <GridLayout class="photo-container">
         <FrescoDrawee
-          height="100"
-          width="100"
-          decodeWidth="100"
-          decodeHeight="100"
+          height="90"
+          width="90"
+          decodeWidth="90"
+          decodeHeight="90"
           isDownsampleEnabled="true"
-          verticalAlignment="center"
-          placeholderImageUri="res://home"
           aspectRatio="1"
           autoPlayAnimations="true"
+          actualImageScaleType="fitXY"
           [imageUri]="photo.url"
         ></FrescoDrawee>
       </GridLayout>

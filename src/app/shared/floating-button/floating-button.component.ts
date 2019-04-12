@@ -1,43 +1,18 @@
-import { Component, ChangeDetectionStrategy, Input, Output, EventEmitter } from '@angular/core'
-import { GestureEventData, TouchGestureEventData } from 'tns-core-modules/ui/gestures'
+import { Component, ChangeDetectionStrategy, Output, EventEmitter } from '@angular/core'
+import { GestureEventData } from 'tns-core-modules/ui/gestures'
 
 @Component({
-  selector: 'FloatingButton',
-  moduleId: module.id,
-  template: `
-    <StackLayout class="float-btn" (tap)="onTap($event)">
-      <Label class="float-btn-text" [text]="text"></Label>
-    </StackLayout>
-  `,
-  styleUrls: ['./floating-button.component.css'],
-  changeDetection: ChangeDetectionStrategy.OnPush
+    selector: 'FloatingButton',
+    moduleId: module.id,
+    templateUrl: './floating-button.component.html',
+    styleUrls: ['./floating-button.component.scss'],
+    changeDetection: ChangeDetectionStrategy.OnPush
 })
 export class FloatingButtonComponent {
-  @Input()
-  text: string = '+'
+    @Output()
+    click = new EventEmitter<GestureEventData>()
 
-  @Input()
-  backgroundColor = '#30bcff'
-
-  @Input()
-  color = 'white'
-
-  @Output()
-  tap = new EventEmitter<GestureEventData>()
-
-  onTap(event: GestureEventData) {
-    this.tap.emit(event)
-  }
-
-  ontouchcancel(event: TouchGestureEventData) {
-    const btn = event.view
-    switch (event.action) {
-      case 'down':
-        btn.className = 'float-btn down'
-        break
-      case 'up':
-        btn.className = 'float-btn up'
-        break
+    onTap(event: GestureEventData) {
+        this.click.emit(event)
     }
-  }
 }

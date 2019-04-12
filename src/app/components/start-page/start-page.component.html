@@ -11,5 +11,7 @@
   </GridLayout>
 </TabView>
 <StackLayout class="floating-btn-wrapper">
-  <FloatingButton (tap)="onTap()"></FloatingButton>
+  <FloatingButton (click)="onFabClick()">
+    <Label class="float-btn-text" text="+"></Label>
+  </FloatingButton>
 </StackLayout>
