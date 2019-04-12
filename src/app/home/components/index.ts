@@ -1,5 +1,5 @@
 import { AlbumsComponent } from './albums/albums.component'
 import { FavouritesComponent } from './favourites/favourites.component'
-import { StartPageComponent } from './start-page/start-page.component'
+import { HomePageComponent } from './home-page/home-page.component'
 
-export const components = [StartPageComponent, AlbumsComponent, FavouritesComponent]
+export const components = [HomePageComponent, AlbumsComponent, FavouritesComponent]
